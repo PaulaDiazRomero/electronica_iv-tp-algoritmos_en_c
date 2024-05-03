@@ -27,7 +27,7 @@ int64_t sumatoria(int32_t n,const int32_t *b)
 {
     // reemplazar el código de abajo con la solución
     int32_t suma = 0;
-    int i = 0;
+    int32_t i = 0;
 
     while(i < n){
         suma = suma + b[i];
@@ -47,10 +47,10 @@ int64_t sumatoria(int32_t n,const int32_t *b)
 int32_t posicion_maximo(int32_t n,const int32_t *b)
 {
     // reemplazar el código de abajo con la solución
-    int32_t maximo = b[0];
-    int i = 1;
-    int k;
-
+    int32_t maximo = b[0]; 
+    int32_t i = 1; 
+    int32_t k = 0;
+    
     while(i < n){
         if(b[i]  > maximo){
             maximo = b[i];
@@ -77,6 +77,18 @@ int32_t posicion_maximo(int32_t n,const int32_t *b)
 void ordenar_en_sitio_menor_a_mayor(int32_t n,int32_t *b)
 {
     // reemplazar el código de abajo con la solución
-    (void)n;
-    (void)b;
+    int32_t i = 0;
+    int32_t j;
+
+    while(i < n){
+        for(j = i+1; j < n; j++){
+            if(b[i] > b[j]){
+                int32_t x = b[i];
+                b[i] = b[j];
+                b[j] = x;
+            }
+        }
+        i++;
+        j++;
+    }
 }
